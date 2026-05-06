@@ -1,43 +1,35 @@
+/* Baskervville (italic-ready serif) + Libre Baskerville (display) — real brand fonts from elementor kit */
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 @import "tailwindcss";
 
 @theme {
-  /* Wine bar palette — warm, sophisticated, editorial */
-  --color-wine-50: #FBF5F2;
-  --color-wine-100: #F4E5DC;
-  --color-wine-200: #E8C9B5;
-  --color-wine-300: #D4A287;
-  --color-wine-400: #B86E55;
-  --color-wine-500: #8C3A36;
-  --color-wine-600: #6E2A2A;
-  --color-wine-700: #571E20;
-  --color-wine-800: #3F1517;
-  --color-wine-900: #2A0F11;
+  /* === REAL BRAND PALETTE (from --e-global-color-* on mijnhemel.nl Elementor kit) === */
+  --color-maroon: #800000;          /* primary brand — deep maroon */
+  --color-maroon-deep: #5e0000;     /* hover / shadow */
+  --color-maroon-soft: #9a3030;
+  --color-cocoa: #855C54;           /* accent — warm cocoa brown for rules/dividers */
+  --color-cocoa-deep: #6B4842;
+  --color-cocoa-soft: #B79590;
+  --color-slate: #6C6B7D;           /* secondary text */
+  --color-slate-soft: #95949f;
+  --color-navy: #211F40;             /* deep highlight */
+  --color-cream: #FEF3E1;           /* signature warm cream — DOMINANT BG */
+  --color-cream-deep: #F4E4C7;      /* deeper cream for alternating sections */
+  --color-cream-paper: #FCEFD9;
+  --color-ink: #333333;              /* body text */
+  --color-ink-soft: #4d4d4d;
+  --color-ink-muted: #7a7a7a;
 
-  --color-brass-300: #E5C99A;
-  --color-brass-400: #D4B070;
-  --color-brass-500: #C5994E;
-  --color-brass-600: #A07B36;
-
-  --color-cream: #FAF4EA;
-  --color-cream-deep: #F2E7D5;
-  --color-paper: #FDF9F2;
-  --color-ink: #2A1A14;
-  --color-ink-soft: #4A3528;
-  --color-ink-muted: #7A6557;
-
-  --color-noir: #1A0E0E;
-  --color-noir-soft: #2C1A1A;
-
-  --font-display: "Cormorant Garamond", "EB Garamond", Georgia, serif;
-  --font-serif: "Cormorant Garamond", "EB Garamond", Georgia, serif;
-  --font-body: "Inter", "Avenir Next", system-ui, sans-serif;
-  --font-script: "Mrs Saint Delafield", "Cormorant Garamond", cursive;
+  /* Fonts — Baskervville (italic), Libre Baskerville (display weight 700), Century Gothic stack */
+  --font-display: "Baskervville", "Libre Baskerville", "EB Garamond", Georgia, serif;
+  --font-display-bold: "Libre Baskerville", "Baskervville", Georgia, serif;
+  --font-body: "Century Gothic", "URW Gothic", "Avant Garde", "Futura", "Trebuchet MS", system-ui, sans-serif;
   --font-sl: "DM Sans", "Inter", system-ui, sans-serif;
   --font-sl-display: "Bricolage Grotesque", system-ui, sans-serif;
 
-  --shadow-warm: 0 25px 60px -25px rgba(110, 42, 42, 0.45);
-  --shadow-soft: 0 10px 40px -12px rgba(42, 15, 17, 0.18);
-  --shadow-card: 0 6px 24px -8px rgba(42, 15, 17, 0.12);
+  --shadow-maroon: 0 25px 60px -25px rgba(128, 0, 0, 0.45);
+  --shadow-soft: 0 10px 40px -12px rgba(33, 31, 64, 0.18);
+  --shadow-card: 0 6px 24px -8px rgba(33, 31, 64, 0.15);
 }
 
 @layer base {
@@ -51,16 +43,28 @@
     background: var(--color-cream);
     color: var(--color-ink);
     font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.65;
+    letter-spacing: 0.01em;
   }
 
-  h1, h2, h3, h4, h5 {
+  /* H1-H6 = Baskervville italic ready serif (elementor source) */
+  h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
+    font-weight: 400;
+    color: var(--color-maroon);
     letter-spacing: -0.005em;
-    color: var(--color-wine-800);
+    line-height: 1.1;
+  }
+
+  /* Anchors share Century Gothic body */
+  a {
+    color: var(--color-maroon);
+    text-decoration-color: var(--color-cocoa);
   }
 
   ::selection {
-    background: var(--color-wine-500);
+    background: var(--color-maroon);
     color: var(--color-cream);
   }
 }
@@ -74,186 +78,363 @@
     @apply mx-auto px-6 sm:px-10 max-w-5xl;
   }
 
+  .container-prose {
+    @apply mx-auto px-6 sm:px-10 max-w-3xl;
+  }
+
+  /* === BUTTONS === */
+  /* Primary — maroon fill, white text. On hover: white fill + maroon outline (per brand) */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 bg-wine-700 px-7 py-3.5 text-cream font-medium tracking-wide text-[15px] transition;
-    border: 1px solid var(--color-wine-700);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background: var(--color-maroon);
+    color: #ffffff;
+    border: 1px solid var(--color-maroon);
+    padding: 0.85rem 1.7rem;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   .btn-primary:hover {
-    @apply bg-wine-800 -translate-y-0.5;
-    border-color: var(--color-wine-800);
+    background: #ffffff;
+    color: var(--color-maroon);
+    border-color: var(--color-maroon);
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 font-medium tracking-wide text-[15px] transition;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
     background: transparent;
-    border: 1px solid var(--color-wine-700);
-    color: var(--color-wine-800);
+    color: var(--color-maroon);
+    border: 1px solid var(--color-maroon);
+    padding: 0.85rem 1.7rem;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   .btn-secondary:hover {
-    background: var(--color-wine-700);
-    color: var(--color-cream);
+    background: var(--color-maroon);
+    color: #ffffff;
   }
 
-  .btn-ghost {
-    @apply inline-flex items-center gap-1.5 font-medium text-wine-700 underline-offset-4 hover:underline transition;
+  .btn-cocoa {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background: transparent;
+    color: var(--color-cocoa-deep);
+    border: 1px solid var(--color-cocoa);
+    padding: 0.7rem 1.4rem;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    transition: all 250ms;
+  }
+  .btn-cocoa:hover {
+    background: var(--color-cocoa);
+    color: #ffffff;
   }
 
+  .btn-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-maroon);
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    transition: color 200ms;
+    border-bottom: 1px solid var(--color-cocoa);
+    padding-bottom: 4px;
+  }
+  .btn-link:hover {
+    color: var(--color-maroon-deep);
+    border-color: var(--color-maroon);
+  }
+
+  /* === EYEBROWS / SMALL CAPS === */
+  /* Century Gothic small caps, tracked, cocoa color — used as section eyebrows */
   .eyebrow {
-    @apply inline-flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.28em];
-    color: var(--color-brass-600);
-  }
-  .eyebrow::before {
-    content: '';
-    width: 28px;
-    height: 1px;
-    background: var(--color-brass-500);
     display: inline-block;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--color-cocoa);
   }
-
+  .eyebrow-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--color-cocoa);
+  }
+  .eyebrow-line::before {
+    content: '';
+    width: 36px;
+    height: 1px;
+    background: var(--color-cocoa);
+  }
   .eyebrow-center {
-    @apply justify-center;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--color-cocoa);
+    justify-content: center;
   }
+  .eyebrow-center::before,
   .eyebrow-center::after {
     content: '';
-    width: 28px;
+    width: 36px;
     height: 1px;
-    background: var(--color-brass-500);
-    display: inline-block;
-    margin-left: 12px;
+    background: var(--color-cocoa);
   }
 
-  .heading-display {
+  /* === DISPLAY HEADINGS === */
+  .h-display {
     font-family: var(--font-display);
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    color: var(--color-wine-800);
-  }
-
-  .script-accent {
-    font-family: var(--font-script);
     font-weight: 400;
-    color: var(--color-wine-600);
+    color: var(--color-maroon);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+
+  .h-italic {
+    font-family: var(--font-display);
     font-style: italic;
+    font-weight: 400;
+    color: var(--color-maroon);
   }
 
-  .card-paper {
-    background: var(--color-paper);
-    padding: 2.5rem;
-    border: 1px solid rgba(212, 162, 135, 0.25);
-    box-shadow: var(--shadow-card);
-    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .card-paper:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-warm);
-    border-color: rgba(140, 58, 54, 0.35);
+  /* Baskervville italic pull-quote — the signature voice */
+  .pull-italic {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-maroon);
+    line-height: 1.15;
   }
 
-  .pill {
-    @apply inline-flex items-center gap-1.5 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em];
-    background: var(--color-cream-deep);
-    color: var(--color-wine-700);
+  /* Libre Baskerville block label (32px / 700) — used for chapter headers */
+  .h-libre {
+    font-family: var(--font-display-bold);
+    font-weight: 700;
+    color: var(--color-maroon);
+    font-size: 28px;
+    line-height: 1.2;
   }
 
-  .divider-ornament {
+  /* === RULES / DIVIDERS — cocoa rules per brand === */
+  .rule-cocoa {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: var(--color-cocoa);
+    opacity: 0.6;
+  }
+
+  .divider-ornate {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
-    margin: 24px 0;
+    gap: 1.25rem;
   }
-  .divider-ornament::before,
-  .divider-ornament::after {
+  .divider-ornate::before,
+  .divider-ornate::after {
     content: '';
     width: 60px;
     height: 1px;
-    background: var(--color-brass-400);
-    opacity: 0.6;
+    background: var(--color-cocoa);
+    opacity: 0.7;
   }
-  .divider-ornament span {
+  .divider-ornate-glyph {
     font-family: var(--font-display);
-    color: var(--color-brass-500);
-    font-size: 1.25rem;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--color-cocoa);
+  }
+
+  /* === EDITORIAL CARDS — cream paper with cocoa borders === */
+  .editorial-card {
+    background: var(--color-cream);
+    border: 1px solid var(--color-cocoa);
+    padding: 2.25rem;
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .editorial-card:hover {
+    border-color: var(--color-maroon);
+    box-shadow: var(--shadow-card);
+    transform: translateY(-2px);
+  }
+
+  /* Wine catalog card — bottle photo above, italic name, origin meta */
+  .catalog-card {
+    background: var(--color-cream);
+    padding: 0;
+    border-bottom: 1px solid var(--color-cocoa);
+  }
+  .catalog-card .catalog-img {
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: var(--color-cream-deep);
+  }
+  .catalog-card .catalog-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 600ms ease;
+  }
+  .catalog-card:hover .catalog-img img {
+    transform: scale(1.04);
+  }
+
+  /* Postcard frame */
+  .postcard {
+    background: var(--color-cream);
+    border: 1px solid var(--color-cocoa);
+    padding: 2.5rem;
+    position: relative;
+  }
+  .postcard::before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px solid var(--color-cocoa);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  /* Invitation frame for proeverijen */
+  .invitation {
+    background: var(--color-cream);
+    border: 1px solid var(--color-cocoa);
+    padding: 3rem 2.5rem;
+    position: relative;
+  }
+  .invitation::before,
+  .invitation::after {
+    content: '';
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    height: 1px;
+    background: var(--color-cocoa);
+    opacity: 0.55;
+  }
+  .invitation::before { top: 12px; }
+  .invitation::after { bottom: 12px; }
+
+  /* Small caps utility */
+  .smallcaps {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+  }
+
+  /* Editorial dropcap */
+  .dropcap::first-letter {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 5rem;
+    color: var(--color-maroon);
+    float: left;
+    line-height: 0.9;
+    margin: 0.1rem 0.6rem 0 0;
+  }
+
+  /* Stamp-style postal mark for contact page */
+  .stamp {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color-maroon);
+    padding: 1rem 1.25rem;
+    background: var(--color-cream);
+    transform: rotate(-4deg);
+    text-align: center;
   }
 }
 
-/* Decorative serif underline */
-.underline-elegant {
-  background-image: linear-gradient(transparent 78%, rgba(140, 58, 54, 0.35) 78%);
-  background-size: 100% 100%;
-  padding: 0 2px;
-}
+/* === DECORATIVE ELEMENTS === */
 
-.italic-accent {
-  font-style: italic;
+/* Italic underline accent — like an editorial highlight */
+.italic-mark {
   font-family: var(--font-display);
-  color: var(--color-wine-600);
-}
-
-/* Vintage paper texture overlay */
-.paper-texture {
+  font-style: italic;
+  color: var(--color-maroon);
   position: relative;
 }
-.paper-texture::before {
+
+.cream-bg { background: var(--color-cream); }
+.cream-deep-bg { background: var(--color-cream-deep); }
+.maroon-bg { background: var(--color-maroon); color: var(--color-cream); }
+.navy-bg { background: var(--color-navy); color: var(--color-cream); }
+.cocoa-text { color: var(--color-cocoa); }
+.maroon-text { color: var(--color-maroon); }
+
+/* Editorial body paragraph */
+.body-prose p {
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--color-ink-soft);
+  margin-bottom: 1.25rem;
+}
+.body-prose p + p { text-indent: 1.5em; }
+.body-prose p.no-indent { text-indent: 0; }
+
+/* Subtle paper grain on cream sections */
+.paper-grain {
+  position: relative;
+}
+.paper-grain::before {
   content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.05;
   mix-blend-mode: multiply;
-}
-
-/* Hero glow */
-.hero-warm {
-  position: relative;
-  isolation: isolate;
-}
-.hero-warm::before {
-  content: '';
-  position: absolute;
-  top: -10%;
-  right: -5%;
-  width: 55vw;
-  height: 55vw;
-  max-width: 800px;
-  max-height: 800px;
-  background: radial-gradient(closest-side, rgba(140, 58, 54, 0.18), transparent 70%);
-  z-index: -1;
-  filter: blur(40px);
-}
-.hero-warm::after {
-  content: '';
-  position: absolute;
-  bottom: -10%;
-  left: -5%;
-  width: 45vw;
-  height: 45vw;
-  max-width: 600px;
-  max-height: 600px;
-  background: radial-gradient(closest-side, rgba(197, 153, 78, 0.15), transparent 70%);
-  z-index: -1;
-  filter: blur(40px);
 }
 
 /* Animations */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
-.fade-up {
-  animation: fadeUp 0.9s cubic-bezier(0.4, 0, 0.2, 1) both;
-}
-.fade-up-delay-1 { animation-delay: 0.15s; }
-.fade-up-delay-2 { animation-delay: 0.3s; }
-.fade-up-delay-3 { animation-delay: 0.45s; }
-.fade-up-delay-4 { animation-delay: 0.6s; }
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-.float-anim { animation: float 6s ease-in-out infinite; }
+.fade-up { animation: fadeUp 0.85s cubic-bezier(0.4, 0, 0.2, 1) both; }
+.fade-up-d1 { animation-delay: 0.12s; }
+.fade-up-d2 { animation-delay: 0.24s; }
+.fade-up-d3 { animation-delay: 0.36s; }
+.fade-up-d4 { animation-delay: 0.48s; }
 
 /* Marquee */
 .marquee {
@@ -265,7 +446,7 @@
 .marquee-track {
   display: flex;
   flex-shrink: 0;
-  animation: marquee 45s linear infinite;
+  animation: marquee 50s linear infinite;
   gap: 4rem;
   padding-right: 4rem;
 }
@@ -273,27 +454,8 @@
   to { transform: translateX(-50%); }
 }
 
-/* Vintage label panel */
-.vintage-label {
-  background: var(--color-cream);
-  border: 1px solid var(--color-brass-400);
-  position: relative;
-}
-.vintage-label::before,
-.vintage-label::after {
-  content: '';
-  position: absolute;
-  left: 8px;
-  right: 8px;
-  height: 1px;
-  background: var(--color-brass-400);
-  opacity: 0.5;
-}
-.vintage-label::before { top: 8px; }
-.vintage-label::after { bottom: 8px; }
-
 /* ============================================================
-   Solutions Lab — Refined Brutalist
+   Solutions Lab — STYLEGUIDE-LOCKED
    STRICT palette: black #0a0a0a / white #fafafa / yellow #FFD500
    ============================================================ */
 

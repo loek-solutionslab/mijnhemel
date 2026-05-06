@@ -11,11 +11,11 @@ mountLayout();
   if (localStorage.getItem(KEY)) return;
   const el = document.createElement("div");
   el.innerHTML = `
-    <div class="fixed bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-md z-50 card-paper fade-up">
-      <div class="text-sm leading-relaxed mb-3" style="color: var(--color-ink-soft);">Wij gebruiken alleen functionele en analytische cookies om de site te verbeteren. Geen tracking voor derden.</div>
-      <div class="flex gap-2">
-        <button data-cookie-ok class="btn-primary text-xs py-2 px-4">Akkoord</button>
-        <a href="/pages/contact.html" class="btn-ghost text-xs">Meer info</a>
+    <div class="fixed bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-md z-50 fade-up" style="background: #FEF3E1; border: 1px solid #855C54; padding: 1.5rem; box-shadow: 0 10px 40px -12px rgba(33, 31, 64, 0.18);">
+      <div style="font-family: 'Century Gothic', sans-serif; font-size: 13px; line-height: 1.65; margin-bottom: 0.85rem; color: #4d4d4d;">Wij gebruiken alleen functionele en analytische cookies om de site te verbeteren. Geen tracking voor derden.</div>
+      <div class="flex gap-2 items-center">
+        <button data-cookie-ok class="btn-primary" style="padding: 0.55rem 1.1rem; font-size: 10px;">Akkoord</button>
+        <a href="/pages/contact.html" style="font-family: 'Century Gothic', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #800000;">Meer info</a>
       </div>
     </div>
   `;
