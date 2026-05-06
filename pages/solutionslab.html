@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mijnhemel.nl — site analysis · solutions lab</title>
+  <meta name="description" content="A personalized site analysis from Solutions Lab. We rebuilt mijnhemel.nl to show what a modern, conversion-focused version of the wine bar's site could look like." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+</head>
+<body class="sl-page">
+  <div data-layout-top></div>
+
+  <main>
+    <!-- HERO -->
+    <section class="sl-section sl-bg-white">
+      <div class="sl-container">
+        <div class="sl-stack-lg">
+          <span class="sl-label">a personalized site analysis for mijnhemel.nl</span>
+          <h1 class="sl-hero-title fade-up">
+            <span class="sl-yellow-dot">●</span> a wine bar with<br>
+            real character —<br>
+            and a website<br>
+            that hides it.
+          </h1>
+          <p class="sl-body-lg fade-up fade-up-delay-1">
+            Gastrovino Mijn Hemel has the kind of soul most hospitality businesses dream about. The current website tells almost none of that story. We crawled the live site, found a <strong class="sl-strong">three-page brochure</strong> on a slow WordPress stack, and rebuilt it as a seven-page editorial experience that actually invites people through the door.
+          </p>
+          <div class="sl-cta-row fade-up fade-up-delay-2">
+            <a href="mailto:loek@solutionslab.nl?subject=Mijn Hemel — site rebuild" class="sl-btn-primary">
+              let's talk
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a href="/" class="sl-btn-outline">view the rebuilt site</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="sl-section sl-bg-black">
+      <div class="sl-container">
+        <div class="sl-stack-md">
+          <span class="sl-label sl-label-on-dark">01 — what the audit shows</span>
+          <h2 class="sl-section-title sl-text-white">
+            <span class="sl-yellow-dot">●</span> the current state, in numbers.
+          </h2>
+        </div>
+
+        <div class="sl-stat-grid">
+          <div class="sl-stat">
+            <div class="sl-stat-label">pages on the site</div>
+            <div class="sl-stat-value">3</div>
+            <div class="sl-stat-meta">home, home (duplicate), and a delivery page — that's it.</div>
+          </div>
+          <div class="sl-stat">
+            <div class="sl-stat-label">missing fundamentals</div>
+            <div class="sl-stat-value">8</div>
+            <div class="sl-stat-meta">no logo file, no schema, no og image, no real menu, no team, no story, no booking, no map.</div>
+          </div>
+          <div class="sl-stat">
+            <div class="sl-stat-label">tech stack age</div>
+            <div class="sl-stat-value">6.4<span class="sl-stat-unit">.8</span></div>
+            <div class="sl-stat-meta">wordpress 6.4.8 — three minor versions behind. elementor-built. heavy.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECH ISSUES -->
+    <section class="sl-section sl-bg-white">
+      <div class="sl-container">
+        <div class="sl-stack-md">
+          <span class="sl-label">02 — what's technically wrong</span>
+          <h2 class="sl-section-title">
+            <span class="sl-yellow-dot">●</span> six things google notices first.
+          </h2>
+          <p class="sl-body">
+            None of these are catastrophic. Together they explain why mijnhemel.nl is hard to find, slow to load, and easy to dismiss on mobile.
+          </p>
+        </div>
+
+        <div class="sl-card-grid">
+          <article class="sl-card">
+            <div class="sl-card-tag">seo</div>
+            <h3 class="sl-card-title">page architecture is too thin</h3>
+            <ul class="sl-list">
+              <li>only 3 pages indexed — homepage rendered twice (with and without trailing slash)</li>
+              <li>no dedicated pages for wine selection, café, team, or tastings</li>
+              <li>nothing for google to rank you for beyond "mijn hemel"</li>
+              <li>local search potential ("wijnbar hilversum") is wide open and unclaimed</li>
+            </ul>
+          </article>
+
+          <article class="sl-card">
+            <div class="sl-card-tag">brand</div>
+            <h3 class="sl-card-title">no logo, no recognizable mark</h3>
+            <ul class="sl-list">
+              <li>only a transparent png banner — not used as favicon, og image, or schema logo</li>
+              <li>typography: baskerville pulled in italic + 9 weights (massive overkill)</li>
+              <li>color palette is the wordpress block-editor default — six unrelated colors, no hierarchy</li>
+              <li>visual identity feels accidental, not intentional</li>
+            </ul>
+          </article>
+
+          <article class="sl-card">
+            <div class="sl-card-tag">social</div>
+            <h3 class="sl-card-title">no social previews</h3>
+            <ul class="sl-list">
+              <li>no og:image — link previews on whatsapp and instagram look broken</li>
+              <li>no twitter card metadata</li>
+              <li>only one social link (instagram) and it sits in the nav, not the footer</li>
+              <li>instagram (@gastrovinomijnhemel) is active but disconnected from the site</li>
+            </ul>
+          </article>
+
+          <article class="sl-card">
+            <div class="sl-card-tag">performance</div>
+            <h3 class="sl-card-title">slow on slow connections</h3>
+            <ul class="sl-list">
+              <li>elementor + wordpress = ~120kb of css before anything renders</li>
+              <li>baskerville with all italics + 9 weights = ~200kb of font payload</li>
+              <li>hero photo served at 2400px wide on every device</li>
+              <li>no lazy loading on below-the-fold images</li>
+            </ul>
+          </article>
+
+          <article class="sl-card">
+            <div class="sl-card-tag">conversion</div>
+            <h3 class="sl-card-title">nothing to do, nothing to book</h3>
+            <ul class="sl-list">
+              <li>no reservation form — only a phone number to remember</li>
+              <li>no online ordering for delivery — must call or email</li>
+              <li>no clear "book a tasting" path</li>
+              <li>visitors who are convinced have no way to act on it</li>
+            </ul>
+          </article>
+
+          <article class="sl-card">
+            <div class="sl-card-tag">structured data</div>
+            <h3 class="sl-card-title">invisible to google's local panel</h3>
+            <ul class="sl-list">
+              <li>no localbusiness or restaurant schema</li>
+              <li>opening hours scattered in plain text — google has to guess</li>
+              <li>address present but not marked up as postal address</li>
+              <li>map snippet, knowledge panel, and "open now" badge all forfeited</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARKETING NOW vs BETTER -->
+    <section class="sl-section sl-bg-black">
+      <div class="sl-container">
+        <div class="sl-stack-md">
+          <span class="sl-label sl-label-on-dark">03 — strong identity, weak presentation</span>
+          <h2 class="sl-section-title sl-text-white">
+            <span class="sl-yellow-dot">●</span> the real opportunity.
+          </h2>
+          <p class="sl-body sl-body-on-dark">
+            The current copy is genuinely good — playful, distinctive, hilversum-local. The problem is that it's hidden inside a three-page brochure and competes for attention with a wordpress menu. Here's what the site could feel like with the same voice, properly framed.
+          </p>
+        </div>
+
+        <div class="sl-compare-stack">
+
+          <div class="sl-compare">
+            <div class="sl-compare-col sl-compare-now">
+              <div class="sl-compare-label">now — homepage h1</div>
+              <p class="sl-compare-text">"Mijn Hemel"</p>
+              <div class="sl-compare-meta">just the brand name. no value, no invitation, no hook.</div>
+            </div>
+            <div class="sl-compare-col sl-compare-better">
+              <div class="sl-compare-label sl-compare-label-better">better — what we wrote</div>
+              <p class="sl-compare-text sl-text-white">"De apotheek voor levensgenieters."</p>
+              <div class="sl-compare-meta sl-compare-meta-better">uses your own tagline as the hero — sets tone immediately.</div>
+            </div>
+          </div>
+
+          <div class="sl-compare">
+            <div class="sl-compare-col sl-compare-now">
+              <div class="sl-compare-label">now — call-to-actions</div>
+              <ul class="sl-list">
+                <li>"info@mijnhemel.nl"</li>
+                <li>"035 - 62 14 787"</li>
+                <li>(no buttons, no forms)</li>
+              </ul>
+              <div class="sl-compare-meta">the visitor has to know what they want and act on faith.</div>
+            </div>
+            <div class="sl-compare-col sl-compare-better">
+              <div class="sl-compare-label sl-compare-label-better">better — what we built</div>
+              <ul class="sl-list sl-list-better">
+                <li>"reserveer een tafel" (with date/time/people)</li>
+                <li>"mail uw bestelling" (delivery)</li>
+                <li>"vraag een proeverij aan" (groups)</li>
+              </ul>
+              <div class="sl-compare-meta sl-compare-meta-better">specific, low-friction, three different intents matched.</div>
+            </div>
+          </div>
+
+          <div class="sl-compare">
+            <div class="sl-compare-col sl-compare-now">
+              <div class="sl-compare-label">now — what's offered</div>
+              <p class="sl-compare-text">visitors learn that there's a shop, a café, and home delivery — but only by reading prose. there's no menu, no list of wines, no team, no story.</p>
+              <div class="sl-compare-meta">three businesses presented as one paragraph.</div>
+            </div>
+            <div class="sl-compare-col sl-compare-better">
+              <div class="sl-compare-label sl-compare-label-better">better — three pillars, three pages</div>
+              <p class="sl-compare-text sl-text-white">/wijnen (the selection), /wijncafe (the room), /thuisbezorgd (joop's delivery), /proeverijen (groups), /over-ons (story), /contact (book it).</p>
+              <div class="sl-compare-meta sl-compare-meta-better">each pillar gets the space to be its own product.</div>
+            </div>
+          </div>
+
+          <div class="sl-compare">
+            <div class="sl-compare-col sl-compare-now">
+              <div class="sl-compare-label">now — what's missing</div>
+              <ul class="sl-list">
+                <li>no team / no faces</li>
+                <li>no wines named or described</li>
+                <li>no testimonials or reviews</li>
+                <li>no map, no booking, no menu</li>
+              </ul>
+              <div class="sl-compare-meta">all the trust-building content is absent.</div>
+            </div>
+            <div class="sl-compare-col sl-compare-better">
+              <div class="sl-compare-label sl-compare-label-better">better — what we added</div>
+              <ul class="sl-list sl-list-better">
+                <li>gerard &amp; joop introduced by name and role</li>
+                <li>six wine families, a "what's open this week" panel</li>
+                <li>house rules + reservation form + delivery flow</li>
+                <li>schema.org restaurant markup for the local panel</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TOP 5 -->
+    <section class="sl-section sl-bg-white">
+      <div class="sl-container">
+        <div class="sl-stack-md">
+          <span class="sl-label">04 — top 5 priorities</span>
+          <h2 class="sl-section-title">
+            <span class="sl-yellow-dot">●</span> if you change only five things, change these.
+          </h2>
+        </div>
+
+        <ol class="sl-priority-list">
+          <li class="sl-priority">
+            <span class="sl-priority-number">01</span>
+            <div>
+              <h3 class="sl-priority-title">give each business its own page</h3>
+              <p class="sl-priority-body">Right now the wijnwinkel, wijncafé and thuisbezorgd service share one paragraph. Each has a different audience, different intent, and different conversion goal. Splitting them roughly triples the surface area for google and clarifies the choice for visitors.</p>
+            </div>
+          </li>
+          <li class="sl-priority">
+            <span class="sl-priority-number">02</span>
+            <div>
+              <h3 class="sl-priority-title">add a real reservation form</h3>
+              <p class="sl-priority-body">A wine café that's only bookable by phone leaves money on the table — especially for younger guests, group reservations, and out-of-hour intent. A simple form that emails to info@ closes the loop.</p>
+            </div>
+          </li>
+          <li class="sl-priority">
+            <span class="sl-priority-number">03</span>
+            <div>
+              <h3 class="sl-priority-title">add restaurant schema and an og image</h3>
+              <p class="sl-priority-body">Two small pieces of html unlock the google local panel ("open now", map, hours, phone) and make every whatsapp share preview correctly. Both are missing today and both are free.</p>
+            </div>
+          </li>
+          <li class="sl-priority">
+            <span class="sl-priority-number">04</span>
+            <div>
+              <h3 class="sl-priority-title">describe the wines, name the people</h3>
+              <p class="sl-priority-body">"Wijn uit alle windstreken" is poetry but not findable. List six wine families, name gerard and joop, photograph the room. This is the content that makes the rest of the marketing actually work.</p>
+            </div>
+          </li>
+          <li class="sl-priority">
+            <span class="sl-priority-number">05</span>
+            <div>
+              <h3 class="sl-priority-title">strip the wordpress weight, keep the voice</h3>
+              <p class="sl-priority-body">The current site loads ~320kb of css and fonts before anything appears. A static build (vite, tailwind, two well-chosen fonts) cuts that by 80% — without losing one word of the existing copy.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- WHAT WE BUILT -->
+    <section class="sl-section sl-bg-white sl-bg-bordered">
+      <div class="sl-container">
+        <div class="sl-stack-md">
+          <span class="sl-label">05 — what solutions lab built</span>
+          <h2 class="sl-section-title">
+            <span class="sl-yellow-dot">●</span> the rebuilt site, ready today.
+          </h2>
+        </div>
+
+        <div class="sl-built-grid">
+          <div class="sl-built">
+            <div class="sl-built-mark">+</div>
+            <h4 class="sl-built-title">seven editorial pages</h4>
+            <p class="sl-built-body">homepage, wijnen, wijncafé, thuisbezorgd, proeverijen, over ons, contact — each with its own purpose and its own copy.</p>
+          </div>
+          <div class="sl-built">
+            <div class="sl-built-mark">+</div>
+            <h4 class="sl-built-title">refined typography</h4>
+            <p class="sl-built-body">cormorant garamond + inter — two well-chosen faces, fewer weights, faster load. An editorial feel that suits a wine bar, not a wordpress theme.</p>
+          </div>
+          <div class="sl-built">
+            <div class="sl-built-mark">+</div>
+            <h4 class="sl-built-title">a coherent palette</h4>
+            <p class="sl-built-body">deep wine, brass, cream — chosen and tested, replacing the wordpress block defaults. A look you could put on a label.</p>
+          </div>
+          <div class="sl-built">
+            <div class="sl-built-mark">+</div>
+            <h4 class="sl-built-title">working forms</h4>
+            <p class="sl-built-body">reservation, delivery order, contact — each form opens an email draft to info@, ready to wire to a real backend later.</p>
+          </div>
+          <div class="sl-built">
+            <div class="sl-built-mark">+</div>
+            <h4 class="sl-built-title">restaurant schema + og</h4>
+            <p class="sl-built-body">structured data for the local panel, social previews for whatsapp/instagram. Two small wins that compound over time.</p>
+          </div>
+          <div class="sl-built">
+            <div class="sl-built-mark">+</div>
+            <h4 class="sl-built-title">vite + tailwind static build</h4>
+            <p class="sl-built-body">no wordpress, no plugins, no admin to update. A single static deploy that loads in under a second on mobile.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="sl-section sl-bg-black">
+      <div class="sl-container sl-cta-section">
+        <h2 class="sl-cta-title">
+          <span class="sl-yellow-dot">●</span> curious what we<br>
+          could do for mijn hemel?
+        </h2>
+        <p class="sl-cta-body">
+          This rebuild is yours to keep — code, copy, design. If you'd like to make it official, hook up the forms to a real inbox, add proper photography of the room and the team, or extend it with online ordering — we're a short email away.
+        </p>
+
+        <a href="mailto:loek@solutionslab.nl?subject=Mijn Hemel — let's talk" class="sl-btn-yellow">
+          loek@solutionslab.nl
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+
+        <div class="sl-cta-signature">
+          <span class="sl-yellow-dot">●</span> solutions lab — solutionslab.nl
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer data-layout-footer></footer>
+  <script type="module" src="/src/scripts/main.ts"></script>
+</body>
+</html>
